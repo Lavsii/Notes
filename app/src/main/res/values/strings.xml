@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Notes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="note1">Заметка 1</string>
+    <string name="note2">Заметка 2</string>
+    <string name="note3">Заметка 3</string>
+    <string name="desc1">Описание заметки 1</string>
+    <string name="desc2">Описание заметки 2</string>
+    <string name="desc3">Описание заметки 3</string>
+    <string name="createDate1">24.12.2018</string>
+    <string name="createDate2">05.01.2020</string>
+    <string name="createDate3">20.04.2021</string>
 </resources>
