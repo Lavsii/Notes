@@ -1,7 +1,6 @@
 package ru.geekbrains.notes.domain;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import ru.geekbrains.notes.R;

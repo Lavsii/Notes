@@ -6,14 +6,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-public class MainActivity extends AppCompatActivity {
+import ru.geekbrains.notes.domain.Note;
+
+public class MainActivity extends AppCompatActivity implements ListFragment.OnNoteClicked, PublisherHolder {
+
+    private Publisher publisher = new Publisher();
+
+    private boolean isLandscape = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        boolean isLandscape = getResources().getBoolean(R.bool.isLandscape);
+        isLandscape = getResources().getBoolean(R.bool.isLandscape);
 
         if (!isLandscape) {
             FragmentManager fragmentManager = getSupportFragmentManager();
@@ -26,7 +32,31 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
             }
         }
+    }
 
+    @Override
+    public void onNoteClicked(Note note) {
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        if (isLandscape) {
+
+            fragmentManager.beginTransaction()
+                    .replace(R.id.details_fragment, DetailsFragment.newInstance(note))
+                    .commit();
+
+        } else {
+
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, DetailsFragment.newInstance(note))
+                    .addToBackStack(null)
+                    .commit();
+        }
+
+   }
+
+    @Override
+    public Publisher getPublisher() {
+        return publisher;
     }
 }

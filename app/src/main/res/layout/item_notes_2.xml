@@ -22,7 +22,7 @@
 
     <TextView
         android:id="@+id/create_date"
-        android:layout_width="66dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="11dp"
@@ -33,16 +33,16 @@
         app:layout_constraintStart_toEndOf="@id/notes_name"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/delBtn"
         android:layout_width="@dimen/list_btn_size"
         android:layout_height="@dimen/list_btn_size"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/recyclerbin"
         android:contentDescription="@null"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/recyclerbin"/>
 
     <TextView
         android:id="@+id/desc"
@@ -52,16 +52,17 @@
         android:layout_marginTop="8dp"
         android:text="Описание заметки"
         android:textColor="#808080"
-        android:textSize="10sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/notes_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notes_name" />
+        app:layout_constraintTop_toBottomOf="@+id/notes_name"
+        tools:ignore="SmallSp" />
 
     <View
         android:id="@+id/divider2"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="58dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintTop_toTopOf="parent" />
 
